@@ -1,7 +1,11 @@
 package com.andre.mvc.database.crm.repository;
 
 import com.andre.mvc.database.crm.entity.Client;
+import com.andre.mvc.database.crm.entity.Group;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -19,4 +23,14 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
     public Client findByName(String name);
 
     public Client findByUsername(String username);
+    
+    /*
+     * Edited By Velichko A. start
+     */
+    @Query ("SELECT c FROM clients c WHERE c.group = :group")
+    public List <Client> findClientsByGroup(@Param ("group") Group group);
+    /*
+     * end
+     */
+    
 }

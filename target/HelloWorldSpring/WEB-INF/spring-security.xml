@@ -9,10 +9,10 @@
 
        <security:http auto-config="true" use-expressions="true">
               <security:csrf disabled="true"/>
-              <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
-              <security:intercept-url pattern = "/client/**" access = "hasRole('ROLE_USER')"/>
-              <security:form-login login-processing-url="/j_spring_security_check" login-page="/WEB-INF/pages/login.jsp" default-target-url="/client/cabinet" authentication-failure-url="/error-login"/>
-              <security:logout logout-success-url="/" logout-url="/j_spring_security_logout"/>
+              <security:intercept-url pattern="/CoursesTesting/admin/**" access="hasRole('ROLE_ADMIN')"/>
+              <security:intercept-url pattern = "/CoursesTesting/client/**" access = "hasRole('ROLE_USER')"/>
+              <security:form-login login-processing-url="/CoursesTesting/j_spring_security_check" login-page="/WEB-INF/pages/login.jsp" default-target-url="/CoursesTesting/client/cabinet" authentication-failure-url="/CoursesTesting/error-login"/>
+              <security:logout logout-success-url="/CoursesTesting/" logout-url="/CoursesTesting/j_spring_security_logout"/>
        </security:http>
 
        <security:authentication-manager alias="authenticationManager">

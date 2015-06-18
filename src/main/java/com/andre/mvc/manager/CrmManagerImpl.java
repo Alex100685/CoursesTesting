@@ -2,6 +2,7 @@ package com.andre.mvc.manager;
 
 import com.andre.mvc.database.crm.entity.*;
 import com.andre.mvc.database.crm.repository.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -217,4 +218,15 @@ public class CrmManagerImpl implements CrmManager {
     public void setPlaceRepository(PlaceRepository placeRepository) {
         this.placeRepository = placeRepository;
     }
+
+    /*
+     * Edited By Velichko A. start
+     */
+	@Override
+	public List<Client> getClientsByGroup(Group group) {
+		return clientRepository.findClientsByGroup(group);
+	}
+	/*
+     * end
+     */
 }

@@ -32,7 +32,7 @@ public class ClientController {
     @Autowired
     private ShaPasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = "editProfile")
+    @RequestMapping(value = "/editProfile")
     public ModelAndView editProfilePage() {
         ModelAndView modelAndView = new ModelAndView("/client/edit-profile");
 
@@ -50,7 +50,7 @@ public class ClientController {
         return new ModelAndView("/client/cabinet");
     }
 
-    @RequestMapping(value = "editProfile/changeName", method = RequestMethod.POST, headers = "Accept=application/json")
+    @RequestMapping(value = "/editProfile/changeName", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
     public JsonResponse editName(@RequestParam String username,
                                  @RequestParam String firstName,
@@ -107,7 +107,7 @@ public class ClientController {
         }
     }
 
-    @RequestMapping(value = "editProfile/changePhones", method = RequestMethod.POST, headers = "Accept=application/json")
+    @RequestMapping(value = "/editProfile/changePhones", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
     public JsonResponse editPhone(@RequestParam String phone1,
                                   @RequestParam String phone2,
@@ -131,7 +131,7 @@ public class ClientController {
         return new JsonResponse("Changes accepted", JsonResponse.SUCCESS);
     }
 
-    @RequestMapping(value = "editProfile/changeSocials")
+    @RequestMapping(value = "/editProfile/changeSocials")
     @ResponseBody
     public JsonResponse editSocials(@RequestParam String socials) {
         CustomUserDetailsUser user = (CustomUserDetailsUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -143,7 +143,7 @@ public class ClientController {
         return new JsonResponse("Changes accepted", JsonResponse.SUCCESS);
     }
 
-    @RequestMapping(value = "editProfile/changeEmail")
+    @RequestMapping(value = "/editProfile/changeEmail")
     @ResponseBody
     public JsonResponse editEmail(@RequestParam String email) {
         CustomUserDetailsUser user = (CustomUserDetailsUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -155,7 +155,7 @@ public class ClientController {
         return new JsonResponse("Changes accepted", JsonResponse.SUCCESS);
     }
 
-    @RequestMapping(value = "editProfile/changePassword")
+    @RequestMapping(value = "/editProfile/changePassword")
     @ResponseBody
     public JsonResponse changePassword(@RequestParam String password,
                                        @RequestParam String newPassword,

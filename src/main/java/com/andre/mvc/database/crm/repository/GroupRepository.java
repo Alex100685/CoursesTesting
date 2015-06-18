@@ -1,7 +1,9 @@
 package com.andre.mvc.database.crm.repository;
 
 import com.andre.mvc.database.crm.entity.Group;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,5 +13,6 @@ import java.util.List;
 public interface GroupRepository extends JpaRepository<Group, Long> {
     public List<Group> findByNameLike(String namePattern);
 
+    
     public Group findByName(String name);
 }

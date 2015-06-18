@@ -109,22 +109,22 @@ public class MainController {
         return new ModelAndView("login");
     }
 
-    @RequestMapping(value = "admin/clients/main")
+    @RequestMapping(value = "/admin/clients/main")
     public String clientsMainPage() {
         return "admin/clients";
     }
 
-    @RequestMapping(value = "admin/coaches/main")
+    @RequestMapping(value = "/admin/coaches/main")
     public String coachesMainPage() {
         return "admin/coaches";
     }
 
-    @RequestMapping(value = "admin/courses/main")
+    @RequestMapping(value = "/admin/courses/main")
     public String coursesMainPage() {
         return "admin/courses";
     }
 
-    @RequestMapping(value = "admin/groups/main")
+    @RequestMapping(value = "/admin/groups/main")
     public String groupsMainPage() {
         return "admin/groups";
     }

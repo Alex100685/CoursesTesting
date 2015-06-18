@@ -1,8 +1,16 @@
 package com.andre.mvc.init;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.andre.mvc.manager.HomeTaskManager;
+import com.andre.mvc.manager.HometaskManagerImpl;
 import com.andre.mvc.security.CustomUserDetailsService;
+
 import org.springframework.context.annotation.*;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.context.support.ServletContextResourcePatternResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -37,5 +45,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     CustomUserDetailsService customUserDetailsService() {
         return new CustomUserDetailsService();
     }
-
+    
+    
+    
+    
+    
 }

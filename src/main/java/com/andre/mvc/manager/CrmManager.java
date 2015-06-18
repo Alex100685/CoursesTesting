@@ -72,7 +72,15 @@ public interface CrmManager {
     public List<Place> listAllPlaces();
 
     public Place loadPlaceByName(String name);
+    
+    /*
+     * Edited By Velichko A. start:
+     */
 
+    public List <Client> getClientsByGroup(Group group);
 
+    /*
+     * end
+     */
 
 }
